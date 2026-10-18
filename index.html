@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Wechsel</title>
+  <meta name="description" content="A quick currency converter that keeps working offline.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4f5f9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14171f" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Wechsel">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preload" href="fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <div class="from" id="from" role="group" aria-label="Convert from"></div>
+
+    <div class="amount tinted" id="amountRow">
+      <input id="amount" type="text" inputmode="decimal" autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false" maxlength="14" placeholder="0" autofocus
+             aria-label="Amount">
+      <button type="button" class="clear" id="clear" aria-label="Clear amount" hidden>
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <span class="amount-code" id="amountCode"></span>
+    </div>
+
+    <section class="result tinted" id="result" aria-label="Result">
+      <div class="result-value">
+        <div class="fit" id="fit"><span class="result-num" id="resultNum" aria-live="polite">–</span></div>
+        <span class="result-code" id="resultCode"></span>
+      </div>
+      <p class="rate" id="rate"></p>
+      <div class="to" id="to" role="group" aria-label="Show result in"></div>
+    </section>
+
+    <footer class="foot">
+      <p class="status" id="status" data-state="idle"></p>
+      <button type="button" class="link" id="edit">Edit currencies</button>
+    </footer>
+  </main>
+
+  <span class="measure" id="measure" aria-hidden="true"></span>
+
+  <dialog id="dialog" aria-labelledby="dialogTitle">
+    <form method="dialog">
+      <h2 id="dialogTitle">Edit currencies</h2>
+      <p class="hint">These are your three quick-pick buttons.</p>
+      <label class="field"><span>Left button</span><select id="slot0"></select></label>
+      <label class="field"><span>Middle button</span><select id="slot1"></select></label>
+      <label class="field"><span>Right button</span><select id="slot2"></select></label>
+      <button class="done" value="done">Done</button>
+    </form>
+  </dialog>
+
+  <script src="rates-fallback.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

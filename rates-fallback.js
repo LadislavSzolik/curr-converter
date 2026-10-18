@@ -1,0 +1,37 @@
+// Built-in snapshot of ECB reference rates (via Frankfurter, base EUR, 16 Oct 2026).
+// Used on first launch and whenever no fresher rates are stored on the device.
+window.FALLBACK_RATES = {
+  date: "2026-10-16",
+  rates: {
+    EUR: 1,
+    AUD: 1.6171,
+    BRL: 5.7197,
+    CAD: 1.5935,
+    CHF: 0.9272,
+    CNY: 7.524,
+    CZK: 24.323,
+    DKK: 7.4748,
+    GBP: 0.84385,
+    HKD: 8.8316,
+    HUF: 363.08,
+    IDR: 20290.28,
+    ILS: 3.4822,
+    INR: 106.864,
+    ISK: 136.2,
+    JPY: 177.82,
+    KRW: 1499.01,
+    MXN: 20.6871,
+    MYR: 4.5929,
+    NOK: 10.624,
+    NZD: 1.9868,
+    PHP: 70.858,
+    PLN: 4.37,
+    RON: 5.331,
+    SEK: 11.145,
+    SGD: 1.4395,
+    THB: 37.602,
+    TRY: 55.7328,
+    USD: 1.1253,
+    ZAR: 18.493
+  }
+};
